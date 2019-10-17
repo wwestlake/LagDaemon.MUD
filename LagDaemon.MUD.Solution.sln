@@ -1,0 +1,74 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29409.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "A Core", "A Core", "{30904725-ADB2-4BBC-A17D-271D7BD9DC88}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "B Game Logic", "B Game Logic", "{5112A239-686B-4067-953C-FAE7C31715C5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "C User Interface", "C User Interface", "{EB001F63-84AE-4907-8E34-1B9DB98B8057}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "X Applications", "X Applications", "{0BC80B42-7F24-4F1D-B8F9-FD090C539D45}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{525860EA-A9E5-4DE9-9599-1C0A489CFB50}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{8F1A535A-745B-409A-B3C1-7EA36A63A6A9}"
+EndProject
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "LagDaemon.MUD.Client.Console", "LagDaemon.MUD.Client.Console\LagDaemon.MUD.Client.Console.fsproj", "{2847C3B7-275C-43F8-84D3-6602572932C9}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "LagDaemon.MUD.Server.Console", "LagDaemon.MUD.Server.Console\LagDaemon.MUD.Server.Console.fsproj", "{419BEC46-F2B6-4312-BAA8-4E10EE9AF2CB}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "LagDaemon.MUD.Web", "LagDaemon.MUD.Web\LagDaemon.MUD.Web.fsproj", "{CFBD67FA-0D3D-4680-BAAE-42A14F043780}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Y Unit Tests", "Y Unit Tests", "{155915D7-462C-436B-A639-22178E2D219D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Z Integration Tests", "Z Integration Tests", "{CD371C9B-86FC-4D5F-807C-10518B39FE65}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "LagDaemon.MUD.Core", "LagDaemon.MUD.Core\LagDaemon.MUD.Core.fsproj", "{99A063C5-F396-43E3-8BED-81C74143C697}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "LagDaemon.MUD.UnitTests.Core", "LagDaemon.MUD.UnitTests.Core\LagDaemon.MUD.UnitTests.Core.fsproj", "{5563B8F1-DD6F-4EAD-ADF9-6FF1D7F84A23}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2847C3B7-275C-43F8-84D3-6602572932C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2847C3B7-275C-43F8-84D3-6602572932C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2847C3B7-275C-43F8-84D3-6602572932C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2847C3B7-275C-43F8-84D3-6602572932C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{419BEC46-F2B6-4312-BAA8-4E10EE9AF2CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{419BEC46-F2B6-4312-BAA8-4E10EE9AF2CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{419BEC46-F2B6-4312-BAA8-4E10EE9AF2CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{419BEC46-F2B6-4312-BAA8-4E10EE9AF2CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFBD67FA-0D3D-4680-BAAE-42A14F043780}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFBD67FA-0D3D-4680-BAAE-42A14F043780}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFBD67FA-0D3D-4680-BAAE-42A14F043780}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFBD67FA-0D3D-4680-BAAE-42A14F043780}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99A063C5-F396-43E3-8BED-81C74143C697}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99A063C5-F396-43E3-8BED-81C74143C697}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99A063C5-F396-43E3-8BED-81C74143C697}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99A063C5-F396-43E3-8BED-81C74143C697}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5563B8F1-DD6F-4EAD-ADF9-6FF1D7F84A23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5563B8F1-DD6F-4EAD-ADF9-6FF1D7F84A23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5563B8F1-DD6F-4EAD-ADF9-6FF1D7F84A23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5563B8F1-DD6F-4EAD-ADF9-6FF1D7F84A23}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{525860EA-A9E5-4DE9-9599-1C0A489CFB50} = {0BC80B42-7F24-4F1D-B8F9-FD090C539D45}
+		{8F1A535A-745B-409A-B3C1-7EA36A63A6A9} = {0BC80B42-7F24-4F1D-B8F9-FD090C539D45}
+		{2847C3B7-275C-43F8-84D3-6602572932C9} = {525860EA-A9E5-4DE9-9599-1C0A489CFB50}
+		{419BEC46-F2B6-4312-BAA8-4E10EE9AF2CB} = {8F1A535A-745B-409A-B3C1-7EA36A63A6A9}
+		{CFBD67FA-0D3D-4680-BAAE-42A14F043780} = {8F1A535A-745B-409A-B3C1-7EA36A63A6A9}
+		{99A063C5-F396-43E3-8BED-81C74143C697} = {30904725-ADB2-4BBC-A17D-271D7BD9DC88}
+		{5563B8F1-DD6F-4EAD-ADF9-6FF1D7F84A23} = {155915D7-462C-436B-A639-22178E2D219D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3E3F684A-C877-4D6B-AF4C-D3943396E8DA}
+	EndGlobalSection
+EndGlobal

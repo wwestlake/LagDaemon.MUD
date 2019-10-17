@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="io.fs" />
+    <Compile Include="result.fsi" />
+    <Compile Include="result.fs" />
+    <Compile Include="token.fsi" />
+    <Compile Include="process.fs" />
+    <Compile Include="token.fs" />
+    <Compile Include="emailAddress.fs" />
+  </ItemGroup>
+
+</Project>
