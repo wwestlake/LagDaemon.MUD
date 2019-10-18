@@ -16,6 +16,7 @@ module Token =
 
     [<CompiledName("Create")>]
     let create () =
+        let toUpper (x:string) = x.ToUpper()
         let rand = new Random(int DateTime.Now.Ticks)
         let tokenVals = ['a'..'z'] @ ['A'..'Z'] @ ['0'..'9']
         let max = List.length tokenVals - 1
@@ -23,7 +24,7 @@ module Token =
             if count > 0 then make (tokenVals.[rand.Next(max)] :: acc) (count - 1)
             else acc
         (make [] 4) @ ['-'] @ (make [] 4) @ ['-'] @ (make [] 4) @ ['-'] @ (make [] 4)
-        |> List.toArray |> String.Concat |> Token
+        |> List.toArray |> String.Concat |> toUpper |> Token
 
     let createTokenFromString s = Token s
 

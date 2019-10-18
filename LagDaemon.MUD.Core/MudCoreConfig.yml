@@ -1,0 +1,22 @@
+﻿Mail:
+    Smtp:
+        Pretend: true
+        Host: smtp.sample.com
+        Port: 25
+        User: user1
+        Password: pass1
+    ErrorNotificationRecipients:
+        - wweslake@lagdaemon.com
+AkkaCommon:
+    SystemName: MUDSystem
+    Protocol: akka.tcp
+AkkaServer:
+    Name: MUDServer
+    Host: localhost
+#    ServerURL: akka.tcp://MUDSystem@localhost:9001/user/MUDServer
+    Port: 9001
+AkkClient:
+    Name: MUDClient
+    Host: localhost
+# -1 indicates that the client should generate a port locally
+    Port: -1

@@ -7,7 +7,7 @@ type Token
 module Token =
         
         [<CompiledName("Create")>]
-        val create : () -> Token
+        val create : unit -> Token
 
         
         [<CompiledName("Value")>]

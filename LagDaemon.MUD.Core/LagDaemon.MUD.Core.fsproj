@@ -5,13 +5,25 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="configuration.fs" />
+    <Compile Include="stringHhash.fs" />
     <Compile Include="io.fs" />
     <Compile Include="result.fsi" />
     <Compile Include="result.fs" />
-    <Compile Include="token.fsi" />
     <Compile Include="process.fs" />
+    <Compile Include="token.fsi" />
     <Compile Include="token.fs" />
+    <Compile Include="password.fs" />
     <Compile Include="emailAddress.fs" />
+    <None Include="MudCoreConfig.yml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup />
+
+  <ItemGroup>
+    <PackageReference Include="FSharp.Configuration" Version="1.5.0" />
   </ItemGroup>
 
 </Project>

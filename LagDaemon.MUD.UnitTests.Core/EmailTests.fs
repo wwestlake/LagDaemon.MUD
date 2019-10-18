@@ -8,7 +8,6 @@ module EmailTests =
     open FsCheck
     open FsCheck.NUnit
     open LagDaemon.MUD.Core
-    open EmailTestData
     open System
     
     
@@ -19,26 +18,46 @@ module EmailTests =
         
         ()
     
-    [<Test>]
-    let ``EmailAddress module creates araw email address`` () = 
-        let email = EmailAddress.create "this.is.a.valid@email.address.com"
-        match email with
-        | RawEmailAddress _ -> Assert.Pass()
-        | _ -> Assert.Fail()
     
     [<Property>]
-    let ``Commutative property of email address equality`` s1  =
-        let e1 = EmailAddress.create s1 |> EmailAddress.validate
-        let e2 = EmailAddress.create s1 |> EmailAddress.validate
+    let ``Commutative property of email address equality`` (TestValidEmail email)  =
+        let e1 = EmailAddress.create email |> EmailAddress.validate
+        let e2 = EmailAddress.create email |> EmailAddress.validate
         printfn "%A --- %A" e1 e2
         e1 = e2 && e2 = e1
     
     [<Property>]
-    let ``EmailAddress validates valid email addresses`` (e: EmailAddress) =
-        let v = EmailAddress.validate e
+    let ``EmailAddress validates valid email addresses`` (TestValidEmail email) =
+        let raw = EmailAddress.create email
+        let v = EmailAddress.validate raw
         printfn "%A" v
     
-        match v with
-        | ValidEmailAddress _ -> true
-        | _ -> false
-    
+        EmailAddress.select 
+            (fun em -> true) 
+            (fun _ -> false)
+            (fun _ -> false)
+            (fun _ -> false)
+            (fun _ -> false)
+            v
+       
+    [<Property>]
+    let ``EmailAddress verifies token on email with valid token`` (TestValidEmail email) =
+        let raw = EmailAddress.create email
+        let v = EmailAddress.validate raw
+
+        let verified = v |> EmailAddress.select (fun (_,t) -> 
+                                EmailAddress.verify v t
+                        ) (fun _ -> v) (fun _ -> v) (fun _ -> v) (fun _ -> v) 
+
+        printfn "%A" verified
+
+
+        verified |> EmailAddress.select 
+                            (fun _ -> false) 
+                            (fun _ -> false) 
+                            (fun _ -> true)
+                            (fun _ -> false)
+                            (fun _ -> false)
+
+        
+
