@@ -5,11 +5,11 @@
 [<CompilationRepresentation(CompilationRepresentationFlags.ModuleSuffix)>]
 [<RequireQualifiedAccess>]
 
-module configuration =
+module Configuration =
     open FSharp.Configuration
 
     type SystemConfiguration = YamlConfig<"MudCoreConfig.yml">
 
-    let config = new SystemConfiguration()
 
+    let config = new SystemConfiguration()
 

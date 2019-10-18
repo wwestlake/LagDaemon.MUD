@@ -1,4 +1,18 @@
-﻿Mail:
+﻿System:
+    Login:
+        Password:
+            MinLength: 8
+            MaxLength: 16
+            MinUpper: 2
+            MinDigits: 2
+            MinSpecial: 2
+            Alg: Uber
+        UserName:
+            MinLength: 6
+            MaxLength: 20
+
+
+Mail:
     Smtp:
         Pretend: true
         Host: smtp.sample.com

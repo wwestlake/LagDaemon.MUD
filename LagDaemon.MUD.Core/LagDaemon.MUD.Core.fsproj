@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <Compile Include="configuration.fs" />
+    <Compile Include="hash.fs" />
     <Compile Include="stringHhash.fs" />
     <Compile Include="io.fs" />
     <Compile Include="result.fsi" />
@@ -20,10 +21,9 @@
     </None>
   </ItemGroup>
 
-  <ItemGroup />
-
   <ItemGroup>
     <PackageReference Include="FSharp.Configuration" Version="1.5.0" />
+    <PackageReference Include="PBKDF2.NETCore" Version="1.0.0" />
   </ItemGroup>
 
 </Project>
