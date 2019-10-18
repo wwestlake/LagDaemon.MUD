@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="mailboxes.fs" />
     <Compile Include="configuration.fs" />
     <Compile Include="hash.fs" />
     <Compile Include="stringHhash.fs" />
