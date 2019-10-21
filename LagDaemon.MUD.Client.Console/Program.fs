@@ -1,37 +1,35 @@
 ﻿// Learn more about F# at http://fsharp.org
 
 open System
+open System.Linq
 open LagDaemon.MUD.Core
+open LagDaemon.MongoDB
+open LagDaemon.Types
+open MongoDB.FSharp
+open MongoDB.Bson
+open MongoDB.Driver
+open MongoDB.Driver.Linq
+open Microsoft.FSharp.Linq
+
 
 [<EntryPoint>]
 let main argv =
 
-    let failPassword = Password.create "LG@abc3defg!"
+    //let user = User.Create "Bill" "wwestlake@email.com" "1234!@#$AAbbcc"
 
-    let goodPassword = Password.create "LG73!@abcdefg"
-    let hashed = Password.validate goodPassword
+    //Result.either (fun (x:User) -> x.Save()) (fun x -> printfn "Failed: %A" x)   user
+    
+    let user = User.Find (EmailAddress.create "wwestlake@email.com" |> EmailAddress.validate) |> List.head
+    let verifiedEmail = user.registeredEmail |> EmailAddress.verify <| Token.createTokenFromString "44BI-JV8T-QF44-FEQ8"
 
-    printfn "%A" failPassword
-    printfn "%A" goodPassword
-    printfn "%A" hashed
-    printfn "%A" <| Password.verify hashed goodPassword
+    let update = {
+        user
+            with registeredEmail = verifiedEmail
+    }
 
-    //let rec loop () =
-    //    let result = io {
-    //        let! _ = putStr "Lobby ->"
-    //        let! cmd = getLine
-    //        let! _ = putStrLn cmd
-    //
-    //        return match cmd.Trim().ToLower() <> "quit" with
-    //                | true -> Result.succeed true
-    //                | false -> Result.fail "done!"
-    //    }
-    //    match result with
-    //    | Action r -> r |> Result.either 
-    //                            (fun r -> loop () |> ignore; ()) 
-    //                            (fun msg -> printf "%s" msg) 
-    //
-    //
-    //loop () |> ignore
+    update.Update()
+
+    printfn "%A" user
 
     0 // return an integer exit code
+    

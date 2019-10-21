@@ -1,15 +1,22 @@
-﻿namespace LagDaemon.MUD.Core
+﻿namespace LagDaemon.Types
 
 [<CustomEquality>]
 [<CustomComparison>]
 type EmailAddress =
-    private
     | RawEmailAddress of string
     | ValidEmail of string * Token
     | InvalidEmail of string
     | VerifiedEmailAddress of string
     | FailedEmailAddress of string
     with 
+        member x.Value =
+            match x with
+            | RawEmailAddress s -> s
+            | ValidEmail (s,_) -> s
+            | InvalidEmail s -> s
+            | VerifiedEmailAddress s -> s
+            | FailedEmailAddress s -> s
+
         override x.Equals(o) =
             match o with
             | :? EmailAddress as em ->
@@ -19,19 +26,32 @@ type EmailAddress =
                 | InvalidEmail s1, InvalidEmail s2 -> s1 = s2
                 | VerifiedEmailAddress s1, VerifiedEmailAddress s2 -> s1 = s2
                 | FailedEmailAddress s1, FailedEmailAddress s2 -> s1 = s2
+                | RawEmailAddress s1, ValidEmail (s2,_) -> s1 = s2
+                | ValidEmail (s1, _), RawEmailAddress (s2) -> s1 = s2
                 | _,_ -> false
             | _ -> false
+
+        override x.GetHashCode() =
+            match x with
+            | RawEmailAddress s1 -> s1.GetHashCode()
+            | ValidEmail (s1,_) -> s1.GetHashCode()
+            | InvalidEmail s1 -> s1.GetHashCode()
+            | VerifiedEmailAddress s1 -> s1.GetHashCode()
+            | FailedEmailAddress s1 -> s1.GetHashCode()
+
 
         interface System.IComparable with
             member x.CompareTo yobj =
                 match yobj with
                 | :? EmailAddress as em ->
-                    match x, em with
+                    match em, x with
                     | RawEmailAddress s1, RawEmailAddress s2 -> compare s1 s2
                     | ValidEmail (s1,_), ValidEmail (s2,_) -> compare s1 s2
                     | InvalidEmail s1, InvalidEmail s2 -> compare s1 s2
                     | VerifiedEmailAddress s1, VerifiedEmailAddress s2 -> compare s1 s2
                     | FailedEmailAddress s1, FailedEmailAddress s2 -> compare s1 s2
+                    | RawEmailAddress s1, ValidEmail (s2,_) -> compare s1 s2
+                    | ValidEmail (s1, _), RawEmailAddress (s2) -> compare s1 s2
                     | _,_ -> invalidArg "yobj" "cannot compare value of different types"
                 | _ -> invalidArg "yobj" "cannot compare value of different types"
 

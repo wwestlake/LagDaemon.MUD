@@ -4,6 +4,7 @@ namespace LagDaemon.MUD.UnitTests.Core
 
 module EmailTests =
 
+    open LagDaemon.Types
     open NUnit.Framework
     open FsCheck
     open FsCheck.NUnit

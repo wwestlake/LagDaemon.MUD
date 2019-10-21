@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\LagDaemon.MUD.Core\LagDaemon.MUD.Core.fsproj" />
+    <ProjectReference Include="..\LagDaemon.Types\LagDaemon.Types.fsproj" />
   </ItemGroup>
 
 </Project>

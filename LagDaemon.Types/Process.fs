@@ -1,4 +1,4 @@
-﻿namespace LagDaemon.MUD.Core
+﻿namespace LagDaemon.Types
 
 
 

@@ -10,10 +10,10 @@
     <None Include="Script1.fsx" />
   </ItemGroup>
 
-  <ItemGroup />
-
   <ItemGroup>
+    <ProjectReference Include="..\LagDaemon.MongoDB\LagDaemon.MongoDB.fsproj" />
     <ProjectReference Include="..\LagDaemon.MUD.Core\LagDaemon.MUD.Core.fsproj" />
+    <ProjectReference Include="..\LagDaemon.Types\LagDaemon.Types.fsproj" />
   </ItemGroup>
 
 </Project>

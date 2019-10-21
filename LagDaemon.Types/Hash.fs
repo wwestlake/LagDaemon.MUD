@@ -3,7 +3,7 @@
 // Blog: http://nbevans.wordpress.com/2014/03/13/pbkdf2-hash-function-for-fsharp/
 // License: MIT
 
-namespace LagDaemon.MUD.Core
+namespace LagDaemon.Types
 
 
 

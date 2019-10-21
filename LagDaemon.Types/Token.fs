@@ -1,4 +1,4 @@
-﻿namespace LagDaemon.MUD.Core
+﻿namespace LagDaemon.Types
 
 type Token = Token of string
     with override x.ToString() = let (Token value) = x in value
@@ -26,6 +26,7 @@ module Token =
         (make [] 4) @ ['-'] @ (make [] 4) @ ['-'] @ (make [] 4) @ ['-'] @ (make [] 4)
         |> List.toArray |> String.Concat |> toUpper |> Token
 
+    [<CompiledName("CreateTokenFromString")>]
     let createTokenFromString s = Token s
 
     [<CompiledName("Value")>]

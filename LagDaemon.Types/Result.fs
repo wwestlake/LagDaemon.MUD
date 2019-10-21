@@ -1,4 +1,4 @@
-﻿namespace LagDaemon.MUD.Core
+﻿namespace LagDaemon.Types
 
 type Result<'S,'F> =
     private
@@ -25,6 +25,7 @@ module Result =
         match result with
         | Success s -> success s
         | Failure f -> failure f
+
 
     /// binds a result to the input of a Result function
     [<CompiledName("Bind")>]

@@ -1,8 +1,7 @@
-﻿namespace LagDaemon.MUD.Core
+﻿namespace LagDaemon.Types
 
 
 type Password =
-    private
     | RawPassword of string
     | InvalidPassword of string
     | HashedPassword of string
