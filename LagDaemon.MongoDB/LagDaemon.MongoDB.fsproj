@@ -15,7 +15,7 @@
   <ItemGroup>
     <PackageReference Include="FSharp.Configuration" Version="1.5.0" />
     <PackageReference Include="MongoDB.Bson" Version="2.9.2" />
-    <PackageReference Include="MongoDB.Driver" Version="2.9.2" />
+    <PackageReference Include="MongoDB.Driver" Version="2.19.0" />
     <PackageReference Include="MongoDB.FSharp" Version="0.1.0" />
     <PackageReference Include="NamelessInteractive.FSharp.MongoDB" Version="0.0.4" />
   </ItemGroup>
